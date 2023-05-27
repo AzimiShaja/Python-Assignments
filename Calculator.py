@@ -1,21 +1,46 @@
-# Ask the user for two numbers and an operation
-num1 = float(input("Enter the first number: "))
-num2 = float(input("Enter the second number: "))
-op = input("Enter the operation (+, -, *, /): ")
+def sum(x: int, y: int) -> int:
+    return x + y
 
-# Perform the calculation based on the operation
-if op == "+":
-    result = num1 + num2
-elif op == "-":
-    result = num1 - num2
-elif op == "*":
-    result = num1 * num2
-elif op == "/":
-    result = num1 / num2
-else:
-    print("Invalid operation")
-    result = None
 
-# Display the result to the user
-if result is not None:
-    print(f"The result of the calculation is: {result}")
+def reduce(x: int, y: int) -> int:
+    return x - y
+
+
+def multiply(x: int, y: int) -> int:
+    return x * y
+
+
+def divide(x: int, y: int) -> int:
+    return x / y
+
+
+print('--Welcome to the calculator--')
+
+while True:
+    print('1 +')
+    print('2 -')
+    print('3 x')
+    print('4 /')
+    print('5 exit')
+    choice = input('Enter your choice: ')
+
+    if choice == '1':
+        num1 = int(input('Enter first number: '))
+        num2 = int(input('Enter second number: '))
+        print(sum(num1, num2))
+    elif choice == '2':
+        num1 = int(input('Enter first number: '))
+        num2 = int(input('Enter second number: '))
+        print(reduce(num1, num2))
+    elif choice == '3':
+        num1 = int(input('Enter first number: '))
+        num2 = int(input('Enter second number: '))
+        print(multiply(num1, num2))
+    elif choice == '4':
+        num1 = int(input('Enter first number: '))
+        num2 = int(input('Enter second number: '))
+        print(divide(num1, num2))
+    elif choice == '5':
+        break
+    else:
+        print('Invalid choice')
